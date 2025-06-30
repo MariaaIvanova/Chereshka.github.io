@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cherry Delights - A Celebration of Nature's Sweetest Fruit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 62, 62, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #e53e3e;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2d3748;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #e53e3e;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #e53e3e;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-brand {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(229, 62, 62, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(229, 62, 62, 0.05) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            color: #2d3748;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cherry-icon {
+            font-size: 6rem;
+            color: #e53e3e;
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2d3748;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #e53e3e;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .feature p {
+            color: #718096;
+            line-height: 1.6;
+        }
+
+        /* Cherry Varieties */
+        .varieties {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 4rem 0;
+        }
+
+        .variety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .variety {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .variety:hover {
+            transform: scale(1.05);
+        }
+
+        .variety-name {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #e53e3e;
+            margin-bottom: 0.5rem;
+        }
+
+        .variety-desc {
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #718096;
+            border-top: 1px solid rgba(113, 128, 150, 0.2);
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .varieties {
+                padding: 2rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.4s; }
+        .fade-in:nth-child(4) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="nav-brand">🍒 Cherries</div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#varieties">Varieties</a></li>
+                    <li><a href="#facts">Facts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="cherry-icon">🍒</div>
+                <h1 class="fade-in">Discover the Magic of Cherries</h1>
+                <p class="fade-in">From the delicate blossoms of spring to the sweet harvest of summer, cherries embody the perfect balance of beauty and flavor that nature has to offer.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Why Cherries Are Special</h2>
+                <div class="features" id="about">
+                    <div class="feature fade-in">
+                        <div class="feature-icon">🌸</div>
+                        <h3>Spring Beauty</h3>
+                        <p>Cherry blossoms herald the arrival of spring with their delicate pink and white petals, creating breathtaking displays that inspire art and poetry worldwide.</p>
+                    </div>
+                    <div class="feature fade-in">
+                        <div class="feature-icon">💎</div>
+                        <h3>Nutritional Powerhouse</h3>
+                        <p>Packed with antioxidants, vitamins, and minerals, cherries support heart health, reduce inflammation, and promote better sleep naturally.</p>
+                    </div>
+                    <div class="feature fade-in">
+                        <div class="feature-icon">🎨</div>
+                        <h3>Culinary Versatility</h3>
+                        <p>From fresh eating to preserves, pies, and cocktails, cherries offer endless possibilities for both sweet and savory culinary creations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="varieties">
+                    <h2 class="section-title fade-in">Popular Cherry Varieties</h2>
+                    <div class="variety-grid" id="varieties">
+                        <div class="variety fade-in">
+                            <div class="variety-name">Bing Cherries</div>
+                            <div class="variety-desc">Large, dark red cherries with sweet, juicy flesh. Perfect for fresh eating and desserts.</div>
+                        </div>
+                        <div class="variety fade-in">
+                            <div class="variety-name">Rainier Cherries</div>
+                            <div class="variety-desc">Golden-yellow with a red blush. Exceptionally sweet with a delicate, creamy texture.</div>
+                        </div>
+                        <div class="variety fade-in">
+                            <div class="variety-name">Montmorency</div>
+                            <div class="variety-desc">Bright red tart cherries. Ideal for pies, preserves, and juice production.</div>
+                        </div>
+                        <div class="variety fade-in">
+                            <div class="variety-name">Stella Cherries</div>
+                            <div class="variety-desc">Self-pollinating sweet cherries with dark red skin and firm, sweet flesh.</div>
+                        </div>
+                        <div class="variety fade-in">
+                            <div class="variety-name">Sweetheart Cherries</div>
+                            <div class="variety-desc">Late-season cherries with heart-shaped fruit, deep red color, and exceptional sweetness.</div>
+                        </div>
+                        <div class="variety fade-in">
+                            <div class="variety-name">Lapins Cherries</div>
+                            <div class="variety-desc">Large, dark red cherries with excellent flavor. Self-fertile and disease-resistant variety.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title fade-in">Cherry Facts</h2>
+                <div class="features" id="facts">
+                    <div class="feature fade-in">
+                        <div class="feature-icon">🌍</div>
+                        <h3>Global Heritage</h3>
+                        <p>Cherries have been cultivated for over 2,000 years, originating in the region between the Black and Caspian Seas.</p>
+                    </div>
+                    <div class="feature fade-in">
+                        <div class="feature-icon">🌱</div>
+                        <h3>Tree Life</h3>
+                        <p>Cherry trees can live for 50-100 years and reach heights of 30-40 feet, providing both fruit and beautiful shade.</p>
+                    </div>
+                    <div class="feature fade-in">
+                        <div class="feature-icon">🎯</div>
+                        <h3>Perfect Timing</h3>
+                        <p>The cherry harvest season is brief but magical, typically lasting only 2-3 weeks in early to mid-summer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Cherry Delights. Celebrating nature's sweetest fruit. 🍒</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add some interactive hover effects
+        document.querySelectorAll('.feature, .variety').forEach(element => {
+            element.addEventListener('mouseenter', function() {
+                this.style.transform = this.classList.contains('feature') 
+                    ? 'translateY(-10px)' 
+                    : 'scale(1.05)';
+            });
+            
+            element.addEventListener('mouseleave', function() {
+                this.style.transform = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
