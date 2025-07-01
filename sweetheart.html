@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweetheart Cherries - A Love Story in Every Bite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #93168f;
+            background: linear-gradient(135deg, #f770d5 0%, #e0c3fc 100%);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 1.5rem 0;
+            background: rgba(255, 240, 250, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(236, 72, 153, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #ec4899;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4b244a;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #a21caf;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #ec4899;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+            }
+            .nav-brand {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(168, 85, 247, 0.08) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .heart-icon {
+            font-size: 6rem;
+            color: #ec4899;
+            margin-bottom: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #a21caf;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #7c3aed;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #a21caf;
+        }
+
+        /* Features Grid */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 240, 250, 0.7);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.08);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #ec4899;
+            margin-bottom: 1rem;
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #a21caf;
+        }
+
+        .feature p {
+            color: #7c3aed;
+            line-height: 1.6;
+        }
+
+        /* Sweetheart Focus */
+        .sweetheart-focus {
+            background: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+            border-radius: 30px;
+            padding: 4rem;
+            margin: 4rem 0;
+            box-shadow: 0 10px 30px rgba(236, 72, 153, 0.08);
+        }
+
+        .sweetheart-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        @media (max-width: 900px) {
+            .sweetheart-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .sweetheart-image {
+            text-align: center;
+        }
+        .sweetheart-image .heart-icon {
+            font-size: 8rem;
+            color: #ec4899;
+        }
+        .sweetheart-desc {
+            font-size: 1.2rem;
+            color: #4b244a;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: #a21caf;
+            border-top: 1px solid rgba(168, 85, 247, 0.15);
+            margin-top: 4rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .sweetheart-focus {
+                padding: 2rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="nav-brand">💖 Sweetheart</div>
+                <ul class="nav-links">
+                    <li><a href="#story">Story</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#facts">Facts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="heart-icon">💗</div>
+                <h1>A Love Story in Every Bite</h1>
+                <p>Meet the Sweetheart cherry: heart-shaped, vibrant, and bursting with flavor. A fruit that brings a touch of romance to every table.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" id="story">The Sweetheart Cherry</h2>
+                <div class="sweetheart-focus">
+                    <div class="sweetheart-grid">
+                        <div class="sweetheart-image">
+                            <span class="heart-icon">💖</span>
+                        </div>
+                        <div class="sweetheart-desc">
+                            <p>Originating from the gentle valleys of British Columbia, the Sweetheart cherry is cherished for its late-season harvest and irresistible sweetness. Its deep red, heart-shaped fruit is a symbol of affection and joy, making it a favorite for celebrations and special moments.</p>
+                            <p>Whether enjoyed fresh, in desserts, or as a gift, Sweetheart cherries are a testament to nature's artistry and the bonds we share with loved ones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" id="features">Why You'll Love Sweetheart Cherries</h2>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">❤️</div>
+                        <h3>Heart-Shaped Beauty</h3>
+                        <p>Each cherry is perfectly heart-shaped, making it a delightful treat for the eyes and the palate.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🍬</div>
+                        <h3>Unmatched Sweetness</h3>
+                        <p>Renowned for their rich, sweet flavor and juicy texture, Sweetheart cherries are a true indulgence.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🎁</div>
+                        <h3>Perfect for Gifting</h3>
+                        <p>Share the love! Their unique shape and taste make them a thoughtful gift for any occasion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" id="facts">Sweetheart Cherry Facts</h2>
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">🌸</div>
+                        <h3>Late Bloomer</h3>
+                        <p>Sweetheart cherries are among the last to ripen, extending the cherry season into late summer.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">🌱</div>
+                        <h3>Resilient & Productive</h3>
+                        <p>These trees are self-fertile and produce abundant fruit, making them a favorite among growers.</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">💧</div>
+                        <h3>Juicy Goodness</h3>
+                        <p>With a crisp bite and plenty of juice, Sweetheart cherries are as refreshing as they are delicious.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Sweetheart Cherries. Love at first bite. 💖</p>
+        </div>
+    </footer>
+</body>
+</html> 
