@@ -225,6 +225,9 @@
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
+            display: block;
+            text-decoration: none;
+            color: inherit;
         }
 
         .variety:hover {
@@ -304,6 +307,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#varieties">Varieties</a></li>
                     <li><a href="#facts">Facts</a></li>
+                    <li><a href="cherry-recepies.html">Recipes</a></li>
                 </ul>
             </nav>
         </div>
@@ -346,30 +350,30 @@
                 <div class="varieties">
                     <h2 class="section-title fade-in">Popular Cherry Varieties</h2>
                     <div class="variety-grid" id="varieties">
-                        <div class="variety fade-in">
+                        <a href="BingCherries.html" class="variety fade-in" style="text-decoration: none; color: inherit;">
                             <div class="variety-name">Bing Cherries</div>
                             <div class="variety-desc">Large, dark red cherries with sweet, juicy flesh. Perfect for fresh eating and desserts.</div>
-                        </div>
-                        <div class="variety fade-in">
+                        </a>
+                        <a href="RainerCherries.html" class="variety fade-in" style="text-decoration: none; color: inherit;">
                             <div class="variety-name">Rainier Cherries</div>
                             <div class="variety-desc">Golden-yellow with a red blush. Exceptionally sweet with a delicate, creamy texture.</div>
-                        </div>
-                        <div class="variety fade-in">
+                        </a>
+                        <a href="MontmorencyCherries.html" class="variety fade-in" style="text-decoration: none; color: inherit;">
                             <div class="variety-name">Montmorency</div>
                             <div class="variety-desc">Bright red tart cherries. Ideal for pies, preserves, and juice production.</div>
-                        </div>
-                        <div class="variety fade-in">
+                        </a>
+                        <a href="StellaCherries.html" class="variety fade-in" style="text-decoration: none; color: inherit;">
                             <div class="variety-name">Stella Cherries</div>
                             <div class="variety-desc">Self-pollinating sweet cherries with dark red skin and firm, sweet flesh.</div>
-                        </div>
-                        <div class="variety fade-in">
+                        </a>
+                        <a href="sweetheart.html" class="variety fade-in" style="text-decoration: none; color: inherit;">
                             <div class="variety-name">Sweetheart Cherries</div>
                             <div class="variety-desc">Late-season cherries with heart-shaped fruit, deep red color, and exceptional sweetness.</div>
-                        </div>
-                        <div class="variety fade-in">
+                        </a>
+                        <a href="LapinsCherries.html" class="variety fade-in" style="text-decoration: none; color: inherit;">
                             <div class="variety-name">Lapins Cherries</div>
                             <div class="variety-desc">Large, dark red cherries with excellent flavor. Self-fertile and disease-resistant variety.</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -441,11 +445,9 @@
         });
 
         // Add some interactive hover effects
-        document.querySelectorAll('.feature, .variety').forEach(element => {
+        document.querySelectorAll('.feature').forEach(element => {
             element.addEventListener('mouseenter', function() {
-                this.style.transform = this.classList.contains('feature') 
-                    ? 'translateY(-10px)' 
-                    : 'scale(1.05)';
+                this.style.transform = 'translateY(-10px)';
             });
             
             element.addEventListener('mouseleave', function() {
