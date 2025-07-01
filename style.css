@@ -1,0 +1,111 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #be185d;
+  --grad-start: #fdf2f8;
+  --grad-end:   #fbcfe8;
+}
+
+
+body.rainier {
+  --accent: #d69e2e;
+  --grad-start: #fffaf0;
+  --grad-end:   #fefcbf;
+}
+
+
+body.montmorency {
+  --accent: #e53e3e;
+  --grad-start: #fff5f5;
+  --grad-end:   #fed7d7;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #2d3748;
+  background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%);
+  line-height: 1.6;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 10%, transparent);
+  padding: 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--accent);
+}
+
+main {
+  padding: 3rem 2rem;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+
+.cherry-icon {
+  font-size: 5rem;
+  color: var(--accent);
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 1rem 0;
+}
+
+p.lead {
+  font-size: 1.2rem;
+  color: #4a5568;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+
+.info-card {
+  background: #ffffffaa;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover { transform: translateY(-8px); }
+
+.info-card h2 { color: var(--accent); }
+
+
+footer {
+  text-align: center;
+  color: #a0aec0;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+@keyframes float  { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+@keyframes pulse  { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.1);opacity:.85} }
+
+.icon-float  { animation: float 3s ease-in-out infinite; }
+.icon-bounce { animation: bounce 3s ease-in-out infinite; }
+.icon-pulse  { animation: pulse 3s ease-in-out infinite; }
+
+
+@media (max-width: 768px){
+  h1{font-size:2.3rem}
+}
